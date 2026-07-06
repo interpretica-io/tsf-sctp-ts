@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<package version="1.0">
+    <description>SCTP transport</description>
+    <author mailto="maxim.menshikov@interpretica.io" />
+    <session track_conf="silent">
+        <prologue><script name="prologue"><objective>Prepare the SCTP group.</objective></script></prologue>
+        <epilogue><script name="epilogue"><objective>Finalize the SCTP group.</objective></script></epilogue>
+        <run><script name="probe"><objective>Open an SCTP association to a peer and read what it negotiated.</objective></script></run>
+    </session>
+</package>

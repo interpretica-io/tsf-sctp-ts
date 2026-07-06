@@ -1,0 +1,8 @@
+repositories:
+  - name: tsf_sctp
+    url: https://github.com/interpretica-io/tsf-sctp.git
+    ref: main
+    libs:
+      - ta_sctp
+      - rpcs_sctp
+      - tapi_sctp

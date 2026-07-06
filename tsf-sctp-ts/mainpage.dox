@@ -1,0 +1,17 @@
+/** @mainpage
+
+This suite exercises tsf-sctp - opening an SCTP (RFC 9260) association
+to a peer from the Test Agent it runs on, over the Linux lksctp sockets
+API:
+
+- @ref sctp-probe - connect to a peer, read the negotiated association
+  (state, inbound/outbound stream counts, path MTU, multihoming address
+  lists), and assert it is established.
+
+SCTP is the transport under the telecom signalling stacks (SIGTRAN/M3UA,
+Diameter, S1AP/NGAP) and WebRTC data channels - none of which TE's
+TCP/UDP stack can carry. The association runs in the agent's RPC server
+and is read-only. The peer is supplied via TSF_SCTP_HOST / TSF_SCTP_PORT;
+with none configured the suite skips cleanly, so a bare run is green.
+
+*/

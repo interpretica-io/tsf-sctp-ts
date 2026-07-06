@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<package version="1.0">
+    <description>tsf-sctp demonstration suite</description>
+
+    <!-- @page sctp-ts SCTP Suite
+          @objective Exercise tsf-sctp against an SCTP peer, from the
+                     agent the suite runs on.
+
+          @par Test Groups:
+          - @ref sctp-probe - Open an association and read what it negotiated
+
+          @par Notes:
+          - SCTP runs on the agent, in its RPC server, over the Linux
+            lksctp sockets API. It is read-only (connect, read status,
+            close).
+          - The peer is supplied via env (TSF_SCTP_HOST / TSF_SCTP_PORT);
+            with none set the suite skips cleanly. The agent host needs
+            libsctp (lksctp-tools).
+    -->
+
+    <author mailto="maxim.menshikov@interpretica.io" />
+
+    <session track_conf="silent">
+        <prologue>
+            <script name="prologue">
+                <objective>Prepare the test environment.@md</objective>
+            </script>
+        </prologue>
+        <epilogue>
+            <script name="epilogue">
+                <objective>Finalize the test environment.@md</objective>
+            </script>
+        </epilogue>
+        <run>
+            <package name="sctp" />
+        </run>
+    </session>
+</package>
